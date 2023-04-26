@@ -1,0 +1,128 @@
+@use './variables.scss' as *;
+
+.header {
+  &__Topcontainer {
+    @extend %paddingLine;
+    @extend %Flex;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    justify-content: space-between;
+    background-color: var(--font-color-text);
+    color: var(--beige);
+
+    &__actions {
+      @extend %Flex;
+      gap: 2rem;
+      &__account {
+        @extend %Flex;
+        gap: 1rem;
+
+        &--text {
+          display: none;
+          @media (min-width: 48rem) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav {
+    @extend %Flex;
+    @extend %paddingLine;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--font-color-text);
+    .logo {
+      margin: 0 auto 0 0;
+      @media (min-width: 75rem) {
+        margin: 0;
+      }
+    }
+
+    &__links {
+      display: none;
+      @media (min-width: 75rem) {
+        display: flex;
+        justify-content: space-around;
+        gap: 10rem;
+
+        &__item {
+          list-style: none;
+          position: relative;
+          list-style: none;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s;
+
+          .link {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: var(--font-secondary);
+            text-transform: capitalize;
+            font-size: 2rem;
+            font-weight: map-get($fontWeight, 'regular');
+            &:hover {
+              color: var(--font-color-primary);
+            }
+          }
+
+          .circleActive {
+            position: absolute;
+            left: -33px;
+            top: -25px;
+          }
+        }
+      }
+    }
+
+    &__search {
+      &--desktop {
+        margin-right: 4rem;
+        button {
+          @extend %btnNoStyle;
+        }
+        @media (max-width: 48rem) {
+          display: none;
+        }
+        @extend %Flex;
+        gap: 1rem;
+        border: 1px solid #000000;
+        border-radius: 3px;
+        padding: 8px 13px;
+        input {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          color: var(--font-color-primary);
+          transition: all 0.3s;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      &--mobile {
+        display: none;
+        margin-right: 2rem;
+        button {
+          @extend %btnNoStyle;
+        }
+        @media (max-width: 48rem) {
+          display: flex;
+        }
+      }
+    }
+
+    &__menuMobile {
+      @extend %btnNoStyle;
+      @media (min-width: 75rem) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "facials",
+  "info": {
+    "singularName": "facial",
+    "pluralName": "facials",
+    "displayName": "facial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "moisture",
+        "exfoliants",
+        "facial"
+      ]
+    },
+    "shortDescription": {
+      "type": "richtext"
+    },
+    "reviewStar": {
+      "type": "integer"
+    },
+    "longDescription": {
+      "type": "richtext"
+    },
+    "benefits": {
+      "type": "richtext"
+    },
+    "ingredients": {
+      "type": "richtext"
+    },
+    "howToUse": {
+      "type": "richtext"
+    },
+    "price4Oz": {
+      "type": "decimal"
+    },
+    "price8Oz": {
+      "type": "decimal"
+    },
+    "price16Oz": {
+      "type": "decimal"
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "featured": {
+      "type": "boolean"
+    }
+  }
+}

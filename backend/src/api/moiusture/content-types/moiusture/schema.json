@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "moiustures",
+  "info": {
+    "singularName": "moiusture",
+    "pluralName": "moiustures",
+    "displayName": "moiusture",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "reviewStar": {
+      "type": "integer"
+    },
+    "longDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "benefits": {
+      "type": "richtext",
+      "required": true
+    },
+    "ingredients": {
+      "type": "richtext",
+      "required": true
+    },
+    "howToUse": {
+      "type": "richtext",
+      "required": true
+    },
+    "price4Oz": {
+      "type": "decimal"
+    },
+    "price8Oz": {
+      "type": "decimal"
+    },
+    "price16Oz": {
+      "type": "decimal"
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ]
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "moisture",
+        "exfoliants",
+        "facial"
+      ],
+      "required": true
+    }
+  }
+}

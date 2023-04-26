@@ -1,0 +1,48 @@
+@use './variables.scss' as *;
+
+//Box For News letter styles
+
+.news {
+  @extend %FlexColumn;
+  gap: 1rem;
+  input {
+    border: none;
+    border: 1px solid var(--beige);
+    border-radius: 3px;
+    padding: 1.5rem 1.3rem;
+    width: 100%;
+    background-color: var(--beige);
+    width: 100%;
+    font-family: inherit;
+
+    &::placeholder {
+      color: var(--font-color-text);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+//button styles
+
+.btn {
+  transition: all 0.3s;
+  cursor: pointer;
+  font-size: map-get($fontSize, button);
+  font-family: inherit;
+  padding: 1.4rem;
+  border-radius: 3px;
+  &--main {
+    background-color: var(--font-color-primary);
+    color: var(--beige);
+    width: 100%;
+    text-transform: capitalize;
+    border: 2px solid var(--font-color-primary);
+    transition: all 0.9s linear;
+    &:hover {
+      transition: all 0.3s;
+      opacity: 80%; 
+    }
+  }
+}

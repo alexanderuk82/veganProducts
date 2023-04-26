@@ -1,0 +1,191 @@
+:root {
+  // Colors
+  --beige: #f6f2e6;
+  --white: #fff;
+  --font-color-text: #000;
+  --font-color-primary: #4a4e37;
+  --font-color-primary-100: #adb196;
+
+  // Font
+  --font-primary: pt-sans-pro, sans-serif;
+  --font-secondary: 'Cormorant Garamond', serif;
+
+  // Font Line Height
+  --font-line-height-primary: 1.6rem;
+  --font-line-height-secondary: 1.4rem;
+
+  // Font Letter Spacing
+  --font-letter-spacing-primary: 0.1rem;
+  --font-letter-spacing-secondary: 0.1rem;
+
+  // Font Style
+  --font-style-primary: normal;
+  --font-style-secondary: normal;
+  --font-style-tertiary: normal;
+  --font-style-quaternary: normal;
+
+  // Font Variant
+  --font-variant-primary: normal;
+  --font-variant-secondary: normal;
+}
+
+$fontSize: (
+  'base': 1.5rem,
+  'small': 1rem,
+  'button': 1.8rem,
+  'heading-3': 2.6rem,
+);
+
+$fontWeight: (
+  'light': 300,
+  'regular': 400,
+  'semibold': 500,
+  'bold': 600,
+);
+
+//*Different helpers styles
+
+.textCenter {
+  text-align: center;
+}
+
+//*VAriables to extend
+
+%Flex {
+  display: flex;
+  align-items: center;
+}
+%FlexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+%paddingLine {
+  padding: 0 3rem;
+}
+
+%linkNoStyle {
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+}
+
+%btnNoStyle {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+//Titles for heading footer styles
+
+%headingFooter {
+  font-family: var(--font-secondary);
+  font-size: map-get($fontSize, 'heading-3');
+  text-transform: capitalize;
+  padding: 3rem 2.6rem;
+  border-bottom: 1px solid var(--beige);
+  text-align: center;
+}
+
+//Styles for each column on the footer
+.col {
+  grid-column: 1/3;
+  border-bottom: 1px solid var(--beige);
+  border-right: 1px solid var(--beige);
+  
+  @media (min-width: 75em) {
+    grid-column: 1/2;
+  }
+  &__link {
+    @extend %FlexColumn;
+    & > a,
+    p {
+      color: var(--beige);
+      padding-inline: 2.6rem;
+      padding-bottom: 1rem;
+      text-transform: capitalize;
+      &:first-child {
+        padding-top: 2rem;
+      }
+      &:last-child {
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+.activeLink {
+  .link {
+    color: var(--font-color-primary) !important;
+    font-weight: map-get($fontWeight, 'bold') !important;
+  }
+  &::before {
+    content: '';
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transition: all 0.3s;
+    background: url('/images/circle.svg') no-repeat center center / contain;
+    display: inline-block;
+    width: 20.3rem;
+    height: 6.4rem;
+    position: absolute;
+  }
+}
+
+//Create a keyframe to animate a shake to left and right
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+//? Responsive breakpoints
+//********************************
+
+// @mixin responsive($breakpoint) {
+//   @if $breakpoint == 'phone' {
+//       @media (min-width: 24.625em) {
+//           @content;
+//       }
+//   }
+//   @if $breakpoint == 'phone-land' {
+//       @media (min-width: 31.25em) {
+//           @content;
+//       }
+//   }
+//   @if $breakpoint == 'tablet' {
+//       @media (min-width: 45.625em) {
+//           @content;
+//       }
+//   }
+//   @if $breakpoint == 'tablet-land' {
+//       @media (min-width: 56.25em) {
+//           @content;
+//       }
+//   }
+//   @if $breakpoint == 'desktop' {
+//       @media (min-width: 75em) {
+//           @content;
+//       }
+//   }
+// }
