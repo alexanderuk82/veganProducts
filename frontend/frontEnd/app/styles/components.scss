@@ -1,6 +1,6 @@
 @use './variables.scss' as *;
 
-//Box For News letter styles
+//Box For News letter style
 
 .news {
   @extend %FlexColumn;
@@ -42,7 +42,7 @@
     transition: all 0.9s linear;
     &:hover {
       transition: all 0.3s;
-      opacity: 80%; 
+      opacity: 80%;
     }
   }
 }

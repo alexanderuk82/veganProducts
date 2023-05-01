@@ -20,10 +20,24 @@
 .textCenter {
   text-align: center;
 }
+.footer__container__copyright__left--country {
+  display: flex;
+  align-items: center;
+}
+.footer__container__copyright,
+.footer__container__copyright__left,
 .news,
 .col__link {
   display: flex;
   flex-direction: column;
+}
+.footer__container__detail .headingColumn {
+  font-family: var(--font-secondary);
+  font-size: 2.6rem;
+  text-transform: capitalize;
+  padding: 3rem 2.6rem;
+  border-bottom: 1px solid var(--beige);
+  text-align: center;
 }
 .col {
   grid-column: 1/3;
@@ -125,4 +139,81 @@
 .btn--main:hover {
   transition: all 0.3s;
   opacity: 80%;
+}
+.footer {
+  background-color: var(--font-color-text);
+  color: var(--beige);
+  width: 100%;
+}
+.footer__container__detail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.footer__container__detail__media {
+  grid-column: 3/-1;
+}
+@media (min-width: 75em) {
+  .footer__container__detail__media {
+    grid-column: 2/3 !important;
+  }
+}
+.footer__container__detail__info {
+  grid-column: 1/-1;
+}
+@media (min-width: 37.5em) {
+  .footer__container__detail__info {
+    grid-column: 1/3;
+  }
+}
+@media (min-width: 75em) {
+  .footer__container__detail__info {
+    grid-column: 3/4;
+  }
+}
+.footer__container__detail__info:has(> .center) .col__link {
+  padding-left: 20vw;
+}
+@media (min-width: 37.5em) {
+  .footer__container__detail__info:has(> .center) .col__link {
+    padding-left: unset;
+  }
+}
+.footer__container__detail__news {
+  grid-column: 1/5;
+}
+@media (min-width: 37.5em) {
+  .footer__container__detail__news {
+    grid-column: 3/5;
+  }
+}
+@media (min-width: 75em) {
+  .footer__container__detail__news {
+    grid-column: 4/-1;
+  }
+}
+.footer__container__detail__news form {
+  margin: 2rem 0;
+  padding-inline: 2.6rem;
+}
+.footer__container__copyright {
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (min-width: 75em) {
+  .footer__container__copyright {
+    flex-direction: row !important;
+    justify-content: space-between;
+  }
+}
+.footer__container__copyright__left {
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer__container__copyright__left--copy a {
+  text-decoration: underline;
+  color: var(--beige);
+}
+.footer__container__copyright__right p {
+  padding: 2.6rem;
+  opacity: 90%;
 }

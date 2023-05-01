@@ -1,7 +1,12 @@
-import { Link, useLocation } from '@remix-run/react';
+import { Link, useLocation, useOutletContext } from '@remix-run/react';
+import { useEffect, useState } from 'react';
+import SearchWindow from './searchWindow';
 
 function Header() {
   const location = useLocation();
+  const [search, setSearch] = useState(false);
+
+  const toggleSearch = () => setSearch(!search);
 
   return (
     <header className="header">
@@ -85,9 +90,15 @@ function Header() {
         </div>
 
         <div className="header__nav__search--mobile">
-          <button type="submit">
-            <img src="/images/search.svg" alt="search" />
-          </button>
+          {search ? (
+            <SearchWindow toggleSearch={toggleSearch} />
+          ) : (
+            <>
+              <button type="submit" onClick={toggleSearch}>
+                <img src="/images/search.svg" alt="search" />
+              </button>
+            </>
+          )}
         </div>
 
         <button className="header__nav__menuMobile">

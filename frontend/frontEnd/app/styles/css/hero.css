@@ -1,0 +1,23 @@
+.hero h1 {
+  color: white;
+  font-size: 4.8rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: var(--font-secondary);
+  color: var(--font-color-text);
+  font-weight: 300;
+  letter-spacing: -1;
+}
+
+.hero p {
+  text-align: center;
+  padding-inline: 2.6rem;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 20rem;
+  padding-bottom: 5rem;
+}

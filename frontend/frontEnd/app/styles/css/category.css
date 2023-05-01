@@ -1,0 +1,35 @@
+.main {
+  margin-top: 6rem;
+  padding-inline: 2.6rem;
+}
+
+.main__products {
+  margin-top: 6rem;
+}
+
+.main__products__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+.main__products__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--font-color-text);
+}
+
+.main__products__title a {
+  color: var(--font-color-text);
+}
+.main__products__title .h2 {
+  font-size: 3.2rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.h2 {
+  font-family: var(--font-secondary);
+}
+
+

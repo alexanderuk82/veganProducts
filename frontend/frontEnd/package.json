@@ -13,8 +13,12 @@
     "@remix-run/react": "^1.15.0",
     "@remix-run/serve": "^1.15.0",
     "isbot": "^3.6.8",
+    "keen-slider": "^6.8.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^9.2.4"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.15.0",

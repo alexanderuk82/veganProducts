@@ -1,0 +1,19 @@
+.breadcrumb {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.breadcrumb a {
+  color: var(--font-color-text);
+  font-weight: 600;
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+.breadcrumb a:not(:last-of-type):after {
+  content: ' /';
+  opacity: 0.6;
+}
+.breadcrumb a:last-child {
+  opacity: 0.6;
+}

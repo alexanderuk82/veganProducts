@@ -8,13 +8,13 @@ function getYear() {
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer__container">
-        <div className="footer__container__detail">
-          <div className="footer__container__detail__links col">
+    <footer className="footerPage">
+      <div className="footerPage__container">
+        <div className="footerPage__container__detail">
+          <div className="footerPage__container__detail__links column">
             <h3 className="headingColumn">quick links</h3>
 
-            <div className="col__link">
+            <div className="column__link">
               <Link to="/" className="linkNav">
                 About
               </Link>
@@ -32,10 +32,10 @@ function Footer() {
               </Link>
             </div>
           </div>
-          <div className="footer__container__detail__media col">
+          <div className="footerPage__container__detail__media column">
             <h3 className="headingColumn">social media</h3>
 
-            <div className="col__link">
+            <div className="column__link">
               <Link to="/" className="linkNav">
                 Instagram
               </Link>
@@ -53,9 +53,9 @@ function Footer() {
               </Link>
             </div>
           </div>
-          <div className="footer__container__detail__info col">
+          <div className="footerPage__container__detail__info column">
             <h3 className="headingColumn">contact info</h3>
-            <div className="col__link center">
+            <div className="column__link center">
               <p>Phone number: +44210 451 12</p>
               <p>email: info@thevegan.co.uk</p>
               <p>email: support@thevegan.co.uk</p>
@@ -63,9 +63,9 @@ function Footer() {
               <p>Live-chat: Click here for support</p>
             </div>
           </div>
-          <div className="footer__container__detail__news col">
+          <div className="footerPage__container__detail__news column">
             <h3 className="headingColumn">newsletter</h3>
-            <div className="col__link">
+            <div className="column__link">
               <p>
                 enter your email address and submit, allowing us to receive
                 regular updates, promotions, and news.
@@ -77,13 +77,13 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="footer__container__copyright">
-          <div className="footer__container__copyright__left">
-            <div className="footer__container__copyright__left--country">
+        <div className="footerPage__container__copyright">
+          <div className="footerPage__container__copyright__left">
+            <div className="footerPage__container__copyright__left--country">
               <img src="/images/pin.svg" alt="pin" />
               <p>United Kingdom</p>
             </div>
-            <div className="footer__container__copyright__left--copy">
+            <div className="footerPage__container__copyright__left--copy">
               <p>
                 copyright {getYear()} and all rights reserved by{' '}
                 <Link to="https://www.behance.net/alexanderburgos82">
@@ -92,9 +92,12 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className="footer__container__copyright__right">
-            <p>this UX/UI front-end project has been made from figma to react from Zero</p>
-            </div>
+          <div className="footerPage__container__copyright__right">
+            <p>
+              this UX/UI front-end project has been made from figma to react
+              from Zero
+            </p>
+          </div>
         </div>
       </div>
     </footer>

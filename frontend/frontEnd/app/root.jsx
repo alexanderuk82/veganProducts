@@ -10,9 +10,11 @@ import {
 
 import mainStyles from './styles/css/main.css';
 import styleHeader from './styles/css/header.css';
-import styleFooter from './styles/css/footer.css';
+import styleSearch from './styles/css/search.css';
+import styleFooter from './styles/css/footerPage.css';
 import Footer from './components/footer';
 import Header from './components/header';
+import { useState } from 'react';
 
 export function meta() {
   return {
@@ -46,6 +48,10 @@ export function links() {
     {
       rel: 'stylesheet',
       href: mainStyles,
+    },
+    {
+      rel: 'stylesheet',
+      href: styleSearch,
     },
     {
       rel: 'stylesheet',
