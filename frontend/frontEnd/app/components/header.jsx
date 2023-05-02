@@ -1,12 +1,15 @@
-import { Link, useLocation, useOutletContext } from '@remix-run/react';
-import { useEffect, useState } from 'react';
+import { Link, useLocation } from '@remix-run/react';
+import { useState } from 'react';
 import SearchWindow from './searchWindow';
+import MenuMobile from './menuMobile';
 
 function Header() {
   const location = useLocation();
   const [search, setSearch] = useState(false);
+  const [menuSide, setMenuSide] = useState(false);
 
   const toggleSearch = () => setSearch(!search);
+  const toggleMenuMobile = () => setMenuSide(!menuSide);
 
   return (
     <header className="header">
@@ -100,10 +103,16 @@ function Header() {
             </>
           )}
         </div>
-
-        <button className="header__nav__menuMobile">
-          <img src="/images/menu.svg" alt="menu" />
-        </button>
+        {menuSide ? (
+          <MenuMobile toggleMenuMobile={toggleMenuMobile} location={location} />
+        ) : (
+          <button
+            className="header__nav__menuMobile"
+            onClick={toggleMenuMobile}
+          >
+            <img src="/images/menu.svg" alt="menu" />
+          </button>
+        )}
       </div>
     </header>
   );

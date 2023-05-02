@@ -58,7 +58,6 @@ export function links() {
     {
       rel: 'stylesheet',
       href: styleSlider,
-
     },
 
     {
@@ -105,9 +104,7 @@ function Index() {
               <Link to="/shop">view all</Link>
             </div>
             <div className="recommended__container">
-              <Slider 
-              recommended={recommended}
-              />
+              <Slider recommended={recommended} />
             </div>
           </div>
         </section>
