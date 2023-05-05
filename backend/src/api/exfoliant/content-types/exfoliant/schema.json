@@ -35,28 +35,20 @@
     "howToUse": {
       "type": "richtext"
     },
-    "price4Oz": {
-      "type": "decimal"
-    },
-    "price8Oz": {
-      "type": "decimal"
-    },
-    "price16Oz": {
-      "type": "decimal"
-    },
     "url": {
       "type": "uid",
       "targetField": "title"
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "featured": {
       "type": "boolean"
@@ -68,6 +60,9 @@
         "exfoliants",
         "facial"
       ]
+    },
+    "datasize": {
+      "type": "json"
     }
   }
 }
