@@ -22,3 +22,6 @@ This project was created from scratch, beginning with extensive research, person
 - Remix.js: A modern framework for creating fast and scalable web applications
 - Strapi: A headless CMS that allows for easy management of content and data
 - Figma: A design tool used for creating high-fidelity wireframes and animations
+
+
+![e-commerce-fullstack](home.jpg)
