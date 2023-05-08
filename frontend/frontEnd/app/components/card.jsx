@@ -1,10 +1,9 @@
 import { Link } from '@remix-run/react';
 import { useDataContext } from './context';
+import { idSpecial } from '../helpers';
 
 function Card({ item }) {
   const { addToCart, toggleCart, Api_Url } = useDataContext();
-
-  const idSpecial = () => Math.floor(Math.random() * 1000) + 4896212;
 
   const { title, url, images, categories, datasize } = item.attributes;
   const imageUrl = images.data[0].attributes.url;

@@ -1,13 +1,14 @@
-import { Link } from "@remix-run/react";
+import { Link } from '@remix-run/react';
 
-
-function BreadCrumb({title, category}) {
+function BreadCrumb({ title, category }) {
   return (
-    <section className="breadcrumb">
+    <nav className="breadcrumb">
       <Link to="/">Home</Link>
       <Link to="/shop">shop</Link>
-      <Link to={`/shop/${category}`}>{title}</Link>
-    </section>
+      <Link to={`/shop/${category}`} className="nameProduct">
+        {title}
+      </Link>
+    </nav>
   );
 }
 

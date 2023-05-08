@@ -140,11 +140,37 @@ export default function App() {
     setCartItems(newCart);
   };
 
-  //Verify if the item is already in the cart and add it
+  //Verify if the item is already in the cart only
+  // const addToCart = (item) => {
+  //   const exist = cartItems.find((x) => x.url === item.url);
+  //   if (!exist) {
+  //     setCartItems([...cartItems, item]);
+  //     console.log(cartItems);
+  //   }
+  // };
+
   const addToCart = (item) => {
-    const exist = cartItems.find((x) => x.url === item.url);
-    if (!exist) {
+    const existingItemIndex = cartItems.findIndex(
+      (x) => x.url === item.url && x.size === item.size
+    );
+
+    if (existingItemIndex === -1) {
+      //If the item does not exist in the cart, add it.
       setCartItems([...cartItems, item]);
+    } else {
+      // If the item exists in the cart and has the same size, update the quantity.
+
+      const updatedCartItems = cartItems.map((cartItem, index) => {
+        if (index === existingItemIndex) {
+          return {
+            ...cartItem,
+            quantity: cartItem.quantity + 1,
+            price: item.price, // Update the price
+          };
+        }
+        return cartItem;
+      });
+      setCartItems(updatedCartItems);
     }
   };
 

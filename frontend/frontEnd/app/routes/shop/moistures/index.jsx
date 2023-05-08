@@ -94,7 +94,7 @@ function Index() {
                 ))}
               </>
             ) : (
-              'no hay datos'
+              'nothing to display in this moment'
             )}
           </div>
 

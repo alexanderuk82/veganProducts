@@ -86,52 +86,66 @@ function CartSlide({ toggleCart, valueQt }) {
 
         {/* Items in the cart */}
         <div className="cartWindow__container__items">
-          {cartItems?.length === 0
-            ? 'esta vacio'
-            : cartItems?.map((item) => (
-                <div
-                  className="cartWindow__container__items__item"
-                  key={item.idSpecial}
-                >
-                  <div className="cartWindow__container__items__item__img">
-                    <img src={`${Api_Url}${item.imageUrl}`} alt={item.title} />
-                  </div>
-                  <div className="cartWindow__container__items__item__info">
-                    <h3 className="cartWindow__container__items__item__info--title">
-                      {item.title}
-                    </h3>
-                    <p className="cartWindow__container__items__item__info--size">
-                      size {item.size}
-                    </p>
-                    <select
-                      className="cartWindow__container__items__item__info--quantity"
-                      defaultValue={item.quantity}
-                      onChange={(e) =>
-                        updateQuantity({
-                          idSpecial: item.idSpecial,
-                          quantity: Number(e.target.value),
-                        })
-                      }
-                    >
-                      <option value="1">Qty: 1</option>
-                      <option value="2">Qty: 2</option>
-                      <option value="3">Qty: 3</option>
-                      <option value="4">Qty: 4</option>
-                      <option value="5">Qty: 5</option>
-                    </select>
-                    <p className="cartWindow__container__items__item__info--price">
-                      £{(item.quantity * item.price).toFixed(2)}
-                    </p>
-                  </div>
-
-                  <button
-                    className="cartWindow__container__items__item__remove"
-                    onClick={() => removeItem(item.idSpecial)}
-                  >
-                    <img src="/images/close.svg" alt="remove item" />
-                  </button>
+          {cartItems?.length === 0 ? (
+            <section
+              className="cartWindow__container__items__empty"
+              aria-labelledby="empty-cart-title"
+            >
+              <img
+                src="/images/cartEmpty.svg"
+                alt="Empty shopping cart illustration"
+              />
+              <h2 id="empty-cart-title">
+                Your shopping cart is currently empty. Browse our fantastic
+                selection of products and add your favorites to the cart.
+              </h2>
+            </section>
+          ) : (
+            cartItems?.map((item) => (
+              <div
+                className="cartWindow__container__items__item"
+                key={item.idSpecial}
+              >
+                <div className="cartWindow__container__items__item__img">
+                  <img src={`${Api_Url}${item.imageUrl}`} alt={item.title} />
                 </div>
-              ))}
+                <div className="cartWindow__container__items__item__info">
+                  <h3 className="cartWindow__container__items__item__info--title">
+                    {item.title}
+                  </h3>
+                  <p className="cartWindow__container__items__item__info--size">
+                    size {item.size}
+                  </p>
+                  <select
+                    className="cartWindow__container__items__item__info--quantity"
+                    defaultValue={item.quantity}
+                    onChange={(e) =>
+                      updateQuantity({
+                        idSpecial: item.idSpecial,
+                        quantity: Number(e.target.value),
+                      })
+                    }
+                  >
+                    <option value="1">Qty: 1</option>
+                    <option value="2">Qty: 2</option>
+                    <option value="3">Qty: 3</option>
+                    <option value="4">Qty: 4</option>
+                    <option value="5">Qty: 5</option>
+                  </select>
+                  <p className="cartWindow__container__items__item__info--price">
+                    £{(item.quantity * item.price).toFixed(2)}
+                  </p>
+                </div>
+
+                <button
+                  className="cartWindow__container__items__item__remove"
+                  onClick={() => removeItem(item.idSpecial)}
+                >
+                  <img src="/images/close.svg" alt="remove item" />
+                </button>
+              </div>
+            ))
+          )}
         </div>
 
         {/* Footer of the card */}

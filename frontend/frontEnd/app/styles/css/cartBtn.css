@@ -96,6 +96,17 @@
   height: 34.8rem;
   overflow-y: scroll;
 }
+.cartWindow__container__items__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cartWindow__container__items__empty h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 400;
+}
 .cartWindow__container__items__item {
   display: flex;
   justify-content: space-between;
@@ -116,6 +127,8 @@
   display: flex;
   flex-direction: column;
   gap: 3px;
+  margin-right: auto;
+  width: 100%;
 }
 .cartWindow__container__items__item__info--title {
   font-size: 1.6rem;

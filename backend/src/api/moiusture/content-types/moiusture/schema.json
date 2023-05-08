@@ -4,7 +4,7 @@
   "info": {
     "singularName": "moiusture",
     "pluralName": "moiustures",
-    "displayName": "moiusture",
+    "displayName": "moiustures",
     "description": ""
   },
   "options": {
@@ -63,7 +63,7 @@
     "categories": {
       "type": "enumeration",
       "enum": [
-        "moisture",
+        "moistures",
         "exfoliants",
         "facial"
       ],
