@@ -5,6 +5,7 @@
   bottom: 2rem;
   right: 3rem;
   cursor: pointer;
+  z-index: 500;
 }
 
 .cartBtn__counter {
@@ -33,6 +34,10 @@
   z-index: 1000;
   padding: 3rem;
 }
+@media (min-width: 56.25em) {
+  .cartWindow {
+  }
+}
 
 .cartWindow__title {
   font-size: 4.5rem;
@@ -60,6 +65,16 @@
   background-color: var(--beige);
   border-radius: 5px;
 }
+
+@media (min-width: 56.25em) {
+  .cartWindow__container {
+    width: 40%;
+    height: 95%;
+    margin-left: auto;
+    animation: bounce 2s linear;
+  }
+}
+
 .cartWindow__container__header {
   padding: 1.8rem;
   display: flex;
@@ -213,4 +228,18 @@
 }
 .btn-checkout:hover {
   opacity: 0.9;
+}
+
+/* ANIMATIONS */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

@@ -9,20 +9,13 @@ import Hero from '../../../components/hero';
 import { Link, useLoaderData } from '@remix-run/react';
 import BreadCrumb from '../../../components/breadCrumb';
 import { getMoistures } from '../../../models/moistures.server';
-import { getRecommended } from '../../../models/recommended.server';
 import Card from '../../../components/card';
-import Slider from '../../../components/slider';
+import Recommended from '../../../components/recommended';
+import { useDataContext } from '../../../components/context';
 
 export async function loader() {
-  const [moistures, recommended] = await Promise.all([
-    getMoistures(),
-    getRecommended(),
-  ]);
-
-  return {
-    moistures: moistures.data,
-    recommended: recommended.data,
-  };
+  const moistures = await getMoistures();
+  return moistures.data;
 }
 
 export function meta() {
@@ -53,11 +46,11 @@ export function links() {
     },
     {
       rel: 'stylesheet',
-      href: styleRecommended,
+      href: styleSlider,
     },
     {
       rel: 'stylesheet',
-      href: styleSlider,
+      href: styleRecommended,
     },
 
     {
@@ -68,7 +61,8 @@ export function links() {
 }
 
 function Index() {
-  const { moistures, recommended } = useLoaderData();
+  const moistures = useLoaderData();
+  const { recommended } = useDataContext();
 
   return (
     <>
@@ -86,7 +80,7 @@ function Index() {
             <h2 className="h2">main products</h2>
             <Link to="/shop">view all</Link>
           </div>
-          <div className="main__products__container">
+          <section className="main__products__container">
             {moistures?.length !== 0 ? (
               <>
                 {moistures.map((item) => (
@@ -96,17 +90,9 @@ function Index() {
             ) : (
               'nothing to display in this moment'
             )}
-          </div>
+          </section>
 
-          <div className="recommended">
-            <div className="main__products__title">
-              <h2 className="h2">products recommended</h2>
-              <Link to="/shop">view all</Link>
-            </div>
-            <div className="recommended__container">
-              <Slider recommended={recommended} />
-            </div>
-          </div>
+          <Recommended recommended={recommended} />
         </section>
       </main>
     </>

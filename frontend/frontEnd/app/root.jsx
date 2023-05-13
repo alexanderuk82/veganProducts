@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from '@remix-run/react';
 
 import mainStyles from './styles/css/main.css';
@@ -14,11 +15,21 @@ import styleSearch from './styles/css/search.css';
 import styleMenuSide from './styles/css/menuMobile.css';
 import styleCartBtn from './styles/css/cartBtn.css';
 import styleFooter from './styles/css/footerPage.css';
+import styleRecommended from '~/styles/css/recommended.css';
+import styleSlider from '~/styles/css/slider.css';
+import styleCard from '~/styles/css/cards.css';
 import Footer from './components/footer';
 import Header from './components/header';
 import Cart from './components/cart';
 import DataContext from './components/context';
 import { useState, useEffect } from 'react';
+import { getRecommended } from '~/models/recommended.server';
+
+export async function loader() {
+  const recommended = await getRecommended();
+
+  return recommended.data;
+}
 
 export function meta() {
   return {
@@ -63,12 +74,24 @@ export function links() {
     },
     {
       rel: 'stylesheet',
+      href: styleRecommended,
+    },
+    {
+      rel: 'stylesheet',
+      href: styleSlider,
+    },
+    {
+      rel: 'stylesheet',
       href: styleSearch,
     },
     {
       rel: 'stylesheet',
       href: styleMenuSide,
     },
+    {
+      rel: 'stylesheet',
+      href: styleCard,
+    }, 
     {
       rel: 'stylesheet',
       href: styleCartBtn,
@@ -99,6 +122,10 @@ function Layout({ children }) {
 }
 
 export default function App() {
+  //Recommended products
+
+  const recommended = useLoaderData();
+
   //Api Address
   const Api_Url = 'http://localhost:1337';
 
@@ -178,6 +205,7 @@ export default function App() {
     <DataContext.Provider
       value={{
         valueQt: 1,
+        recommended,
         cart,
         toggleCart,
         addToCart,

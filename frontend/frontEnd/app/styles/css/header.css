@@ -171,7 +171,7 @@
     font-family: var(--font-secondary);
     text-transform: capitalize;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
   }
   .header__nav__links__item .link:hover {
     color: var(--font-color-primary);
